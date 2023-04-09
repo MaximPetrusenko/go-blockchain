@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"../goblockchain/wallet"
+	"../go-blockchain/wallet"
 )
 
 func init() {
@@ -16,4 +16,8 @@ func main() {
 	fmt.Println(w.PrivateKeyStr())
 	fmt.Println(w.PubliceKeyStr())
 	fmt.Println(w.BlockchainAddresss())
+
+	t := wallet.NewTransaction(w.PrivateKey(), w.PublicKey(), w.BlockchainAddresss(), "B", 1.0)
+	fmt.Printf("signature %s\n", t.GenerateSignature())
+
 }
