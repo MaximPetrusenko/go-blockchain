@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go_blockchain/wallet"
 	"log"
+
+	"../goblockchain/wallet"
 )
 
 func init() {
@@ -14,4 +15,5 @@ func main() {
 	w := wallet.NewWallet()
 	fmt.Println(w.PrivateKeyStr())
 	fmt.Println(w.PubliceKeyStr())
+	fmt.Println(w.BlockchainAddresss())
 }
